@@ -1,25 +1,143 @@
+<!doctype html>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Page de connexion</title>
     <style>
         body{
-        background-color: black;}
+            background-color: black;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: Arial, Helvetica, sans-serif;
+            color: #fff;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
         h1{
             background-color: rgb(22, 42, 224);
-            padding: 20px;
-            margin: 15px;
-            border-radius: 35px;
-            height: 35%;
-            align-items: center;
-            display: flex;
-            justify-content: center;
+            padding: 18px 22px;
+            margin: 0 0 18px 0;
+            border-radius: 28px;
             color: white;
-    }
+            text-align: center;
+            width: 100%;
+            max-width: 420px;
+            box-sizing: border-box;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 420px;
+        }
+
+        .login-box {
+            background: rgba(255,255,255,0.04);
+            border: 1px solid rgba(255,255,255,0.08);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 6px 20px rgba(0,0,0,0.6);
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+            box-sizing: border-box;
+        }
+
+        label {
+            display: block;
+            font-size: 0.9rem;
+            margin-bottom: 6px;
+            color: #e9eefc;
+        }
+
+        input[type="email"],
+        input[type="password"] {
+            width: 100%;
+            padding: 10px 12px;
+            border-radius: 8px;
+            border: 1px solid rgba(255,255,255,0.12);
+            background: rgba(0,0,0,0.35);
+            color: #fff;
+            outline: none;
+            box-sizing: border-box;
+            font-size: 0.95rem;
+        }
+
+        .row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .remember {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: rgba(255,255,255,0.85);
+            font-size: 0.9rem;
+        }
+
+        .actions {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .btn {
+            background: rgb(22, 42, 224);
+            color: white;
+            padding: 10px 14px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-block;
+        }
+
+        .link {
+            color: rgba(255,255,255,0.85);
+            text-decoration: underline;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 420px){
+            .login-box { padding: 18px; }
+            h1 { font-size: 1.05rem; padding: 14px; }
+        }
     </style>
 </head>
 <body>
-    <h1>Bienvenue sur le site</h1>
+    <div class="container">
+        <h1>Bienvenue sur le site</h1>
+
+        <form class="login-box" action="#" method="post">
+            <div>
+                <label for="email">Adresse e‑mail</label>
+                <input id="email" name="email" type="email" placeholder="vous@exemple.com" required>
+            </div>
+
+            <div>
+                <label for="password">Mot de passe</label>
+                <input id="password" name="password" type="password" placeholder="Votre mot de passe" required minlength="6" title="6 caractères minimum">
+            </div>
+
+            <div class="actions">
+                <div class="remember">
+                    <input id="remember" name="remember" type="checkbox" aria-label="Se souvenir">
+                    <label for="remember" style="margin:0;">Se souvenir</label>
+                </div>
+                <a href="#" class="link">Mot de passe oublié ?</a>
+            </div>
+
+            <div style="display:flex;justify-content:center;margin-top:6px;">
+                <button type="submit" class="btn">Se connecter</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
